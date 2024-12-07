@@ -854,7 +854,7 @@ export default function Home() {
       <Table.Root size="lg">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeader w="30%" textAlign="center" g>학년/지역</Table.ColumnHeader>
+            <Table.ColumnHeader w="30%" textAlign="center">학년/지역</Table.ColumnHeader>
             <Table.ColumnHeader w="70%" textAlign="center">질문</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
