@@ -848,7 +848,8 @@ export default function Home() {
     return text.replaceAll(regex, (match: string) => `<span style="background: yellow; font-weight: bolder">${match}</span>`);
   };
   return (
-    <Container w="50%" mt="8">
+    <Container width={{ base: '100%', md: '100%', lg: '50%', xl: '50%' }}
+      mt="8">
       <Text mb="2" fontSize="xl" fontWeight="bold">이끌 학부모 검색기</Text>
       <Input onChange={handleSearch}></Input>
       <Table.Root size="lg">
