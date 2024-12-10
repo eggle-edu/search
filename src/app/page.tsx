@@ -8,7 +8,6 @@ import { LuSearch, LuUser } from "react-icons/lu";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Image } from "@chakra-ui/react";
 
-
 const SearchHighlight = ({
   text,
   search,
@@ -49,18 +48,22 @@ const SearchableTable = () => {
 
   return (
     <Theme appearance="light">
-      
-      <Container width={{ base: "100%", lg: "100%" }} bg="#FFFFFF">
-      <Image
-        src="https://cdn.imweb.me/thumbnail/20241209/545634a1a32be.png" // 로고 이미지 경로
-        alt="Logo"
-        width={{ base: "140px", md: "200px" }}
-        height="auto"
-        cursor="pointer"
-        mb={{ base: "12px", md: "20px" }}
-        pt="60px"
-        onClick={() => window.open("https://eggleedu35135.imweb.me/", "_blank")} // 클릭 시 구글로 이동
-      />
+      <Container
+        width={{ base: "100%", md: "80%", lg: "70%", xl: "55%" }}
+        bg="#FFFFFF"
+      >
+        <Image
+          src="https://cdn.imweb.me/thumbnail/20241209/545634a1a32be.png" // 로고 이미지 경로
+          alt="Logo"
+          width={{ base: "140px", md: "200px" }}
+          height="auto"
+          cursor="pointer"
+          mb={{ base: "12px", md: "20px" }}
+          pt="60px"
+          onClick={() =>
+            window.open("https://eggleedu35135.imweb.me/", "_blank")
+          } // 클릭 시 구글로 이동
+        />
         <Text
           fontFamily="pretendard"
           fontWeight="semibold"
@@ -99,32 +102,59 @@ const SearchableTable = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </InputGroup>
-        <Table.Root size="lg">
-          <Table.Header>
-            <Table.Row>
-              <Table.ColumnHeader w="30%" textAlign="center">
-                학년/지역
-              </Table.ColumnHeader>
-              <Table.ColumnHeader w="70%" textAlign="center">
-                질문
-              </Table.ColumnHeader>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {searchResults.map((item, idx) => (
-              <Table.Row key={idx}>
-                <Table.Cell>
-                  {item.grade}
-                  <br />
-                  {item.address}
-                </Table.Cell>
-                <Table.Cell textAlign="start">
-                  <SearchHighlight text={item.question} search={search} />
-                </Table.Cell>
+        <Container
+          border="solid"
+          borderWidth={{ base: "0px", md: "1px" }}
+          borderColor="#e4e4e7"
+          borderRadius="4px" // 둥근 모서리 설정
+          overflow="hidden" // 둥근 모서리 내부에 콘텐츠를 맞춤
+          p="0"
+        >
+          <Table.Root size="lg">
+            <Table.Header>
+              <Table.Row>
+                <Table.ColumnHeader
+                  w="30%"
+                  textAlign="center"
+                  bg="#F2F2F7"
+                  fontFamily="pretendard"
+                  fontWeight="bold"
+                >
+                  학년/지역
+                </Table.ColumnHeader>
+                <Table.ColumnHeader
+                  w="70%"
+                  textAlign="center"
+                  fontFamily="pretendard"
+                  fontWeight="bold"
+                >
+                  질문
+                </Table.ColumnHeader>
               </Table.Row>
-            ))}
-          </Table.Body>
-        </Table.Root>
+            </Table.Header>
+            <Table.Body>
+              {searchResults.map((item, idx) => (
+                <Table.Row key={idx}>
+                  <Table.Cell textAlign="center" bg="#F2F2F7">
+                    <Text fontFamily="pretendard" fontWeight="semibold">
+                      {item.grade}
+                    </Text>
+                    <Text fontFamily="pretendard" fontWeight="regular">
+                      ({item.address})
+                    </Text>
+                  </Table.Cell>
+                  <Table.Cell
+                    textAlign="start"
+                    fontFamily="pretendard"
+                    fontWeight="regular"
+                  >
+                    <SearchHighlight text={item.question} search={search} />
+                  </Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table.Root>
+        </Container>
       </Container>
     </Theme>
   );
