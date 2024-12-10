@@ -63,7 +63,7 @@ const SearchableTable = () => {
         pb="100px"
       >
         <Image
-          src="https://raw.githubusercontent.com/eggle-edu/search/refs/heads/main/public/eggle-logo-light.png" // 로고 이미지 경로
+          src="https://github.com/eggle-edu/search/blob/main/public/eggle-logo-light.png?raw=true" // 로고 이미지 경로
           alt="Logo"
           width={{ base: "140px", md: "200px" }}
           height="auto"
@@ -199,7 +199,7 @@ const SearchableTable = () => {
         </Container>
       )}
       <Image
-          src="https://raw.githubusercontent.com/eggle-edu/search/refs/heads/main/public/eggle-logo-light.png" // 로고 이미지 경로
+          src="https://github.com/eggle-edu/search/blob/main/public/eggle-logo-light.png?raw=true" // 로고 이미지 경로
           alt="Logo"
           width={{ base: "140px", md: "200px" }}
           height="auto"
