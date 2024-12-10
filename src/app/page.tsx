@@ -81,6 +81,7 @@ const SearchableTable = () => {
           <Input
             value={search}
             fontFamily="pretendard"
+            fontSize="16px"
             fontWeight="regular"
             placeholder="검색어를 입력하세요.(ex. 선행, 학년, 지역)"
             onChange={(e) => setSearch(e.target.value)}
