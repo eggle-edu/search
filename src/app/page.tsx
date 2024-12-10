@@ -41,7 +41,8 @@ const SearchableTable = () => {
   const [searchResults, setSearchResults] = useState(items);
 
     // 미디어 쿼리로 모바일 화면 감지
-    const [isMobile] = useMediaQuery(["(max-width: 768px)"], { ssr: false });
+    const isClient = typeof window !== "undefined";
+    const [isMobile] = isClient ? useMediaQuery(["(max-width: 768px)"], { ssr: false } ): [false];
 
   useEffect(() => {
     const filteredResults = items.filter((item) =>
@@ -78,7 +79,7 @@ const SearchableTable = () => {
           pb="4px"
           fontSize={{ base: "24px", md: "30px" }}
         >
-          학부모님 질문 모음
+          학부모님 질문 모음 ddd
         </Text>
         <Text
           fontFamily="pretendard"
