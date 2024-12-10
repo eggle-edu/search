@@ -60,9 +60,10 @@ const SearchableTable = () => {
       <Container
         width={{ base: "100%", md: "80%", lg: "70%", xl: "55%" }}
         bg="#FFFFFF"
+        pb="100px"
       >
         <Image
-          src="https://cdn.imweb.me/thumbnail/20241209/545634a1a32be.png" // 로고 이미지 경로
+          src="https://raw.githubusercontent.com/eggle-edu/search/refs/heads/main/public/eggle-logo-light.png" // 로고 이미지 경로
           alt="Logo"
           width={{ base: "140px", md: "200px" }}
           height="auto"
@@ -70,7 +71,7 @@ const SearchableTable = () => {
           mb={{ base: "12px", md: "20px" }}
           pt="60px"
           onClick={() =>
-            window.open("https://eggleedu35135.imweb.me/", "_blank")
+            window.open("https://eggle.kr/", "_blank")
           } // 클릭 시 구글로 이동
         />
         <Text
@@ -197,6 +198,18 @@ const SearchableTable = () => {
           </Table.Root>
         </Container>
       )}
+      <Image
+          src="https://raw.githubusercontent.com/eggle-edu/search/refs/heads/main/public/eggle-logo-light.png" // 로고 이미지 경로
+          alt="Logo"
+          width={{ base: "140px", md: "200px" }}
+          height="auto"
+          cursor="pointer"
+          mb={{ base: "12px", md: "20px" }}
+          pt="60px"
+          onClick={() =>
+            window.open("https://eggle.kr/", "_blank")
+          } // 클릭 시 구글로 이동
+        />
       </Container>
     </Theme>
   );
