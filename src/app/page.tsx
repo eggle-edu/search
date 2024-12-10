@@ -41,7 +41,9 @@ const SearchableTable = () => {
 
   useEffect(() => {
     const filteredResults = items.filter((item) =>
-      item.question.toLowerCase().includes(search.toLowerCase())
+      item.question.toLowerCase().includes(search.toLowerCase()) || // 질문 검색
+    item.grade.toLowerCase().includes(search.toLowerCase()) ||   // 학년 검색
+    item.address.toLowerCase().includes(search.toLowerCase())   // 지역 검색
     );
     setSearchResults(filteredResults);
   }, [search]);
@@ -137,10 +139,11 @@ const SearchableTable = () => {
                 <Table.Row key={idx}>
                   <Table.Cell textAlign="center" bg="#F2F2F7">
                     <Text fontFamily="pretendard" fontWeight="semibold">
-                      {item.grade}
+                    <SearchHighlight text={item.grade} search={search} />
+                      {/* {item.grade} */}
                     </Text>
                     <Text fontFamily="pretendard" fontWeight="regular">
-                      ({item.address})
+                    (<SearchHighlight text={item.address} search={search} />)
                     </Text>
                   </Table.Cell>
                   <Table.Cell
