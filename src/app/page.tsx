@@ -79,7 +79,7 @@ const SearchableTable = () => {
           pb="4px"
           fontSize={{ base: "24px", md: "30px" }}
         >
-          학부모님 질문 모음 ddd
+          학부모님 질문 모음
         </Text>
         <Text
           fontFamily="pretendard"
@@ -118,14 +118,20 @@ const SearchableTable = () => {
           {searchResults.map((item, idx) => (
             <Box
               key={idx}
-              p={4}
+              pl={4}
+              pr={4}
+              pt={5}
+              pb={5}
+              // p={4}
+              mb="12px"
               borderWidth="1px"
               borderRadius="8px"
-              bg="#F9FAFB"
+              // bg="#F9FAFB"
+              bg="#FFFFFF"
             >
-              <Text fontFamily="pretendard" fontWeight="semibold" mb={1}>
+              <Text fontFamily="pretendard" fontWeight="bold" mb="12px" fontSize="18px">
                 <SearchHighlight
-                  text={`${item.grade} - ${item.address}`}
+                  text={`${item.grade} (${item.address})`}
                   search={search}
                 />
               </Text>
