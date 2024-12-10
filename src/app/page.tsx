@@ -6,6 +6,8 @@ import { Theme } from "@chakra-ui/react";
 import { InputGroup } from "@/components/ui/input-group";
 import { LuSearch, LuUser } from "react-icons/lu";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { Image } from "@chakra-ui/react";
+
 
 const SearchHighlight = ({
   text,
@@ -47,11 +49,21 @@ const SearchableTable = () => {
 
   return (
     <Theme appearance="light">
+      
       <Container width={{ base: "100%", lg: "100%" }} bg="#FFFFFF">
+      <Image
+        src="https://cdn.imweb.me/thumbnail/20241209/545634a1a32be.png" // 로고 이미지 경로
+        alt="Logo"
+        width={{ base: "140px", md: "200px" }}
+        height="auto"
+        cursor="pointer"
+        mb={{ base: "12px", md: "20px" }}
+        pt="60px"
+        onClick={() => window.open("https://eggleedu35135.imweb.me/", "_blank")} // 클릭 시 구글로 이동
+      />
         <Text
           fontFamily="pretendard"
           fontWeight="semibold"
-          pt="60px"
           pb="4px"
           fontSize={{ base: "24px", md: "30px" }}
         >
