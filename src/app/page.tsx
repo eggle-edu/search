@@ -1,5 +1,4 @@
 "use client";
-import { items } from "@/data/item";
 import { Container, Input, Text, Table, Kbd, Stack, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Theme } from "@chakra-ui/react";
@@ -8,6 +7,7 @@ import { LuSearch, LuUser } from "react-icons/lu";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Image } from "@chakra-ui/react";
 import { useMediaQuery } from "@chakra-ui/react";
+import { items } from "@/data/item";
 
 const SearchHighlight = ({
   text,
@@ -122,12 +122,10 @@ const SearchableTable = () => {
               pr={4}
               pt={5}
               pb={5}
-              // p={4}
               mb="12px"
               borderWidth="1px"
               borderRadius="8px"
-              // bg="#F9FAFB"
-              bg="#FFFFFF"
+              bg="#F9FAFB"
             >
               <Text fontFamily="pretendard" fontWeight="bold" mb="12px" fontSize="18px">
                 <SearchHighlight
@@ -135,7 +133,7 @@ const SearchableTable = () => {
                   search={search}
                 />
               </Text>
-              <Text fontFamily="pretendard" fontWeight="regular">
+              <Text fontFamily="pretendard" fontWeight="regular" style={{ whiteSpace: 'pre-line' }}>
                 <SearchHighlight text={item.question} search={search} />
               </Text>
             </Box>
@@ -189,6 +187,7 @@ const SearchableTable = () => {
                     textAlign="start"
                     fontFamily="pretendard"
                     fontWeight="regular"
+                    style={{ whiteSpace: 'pre-line' }}
                   >
                     <SearchHighlight text={item.question} search={search} />
                   </Table.Cell>
