@@ -1,12 +1,13 @@
 "use client";
 import { items } from "@/data/item";
-import { Container, Input, Text, Table, Kbd } from "@chakra-ui/react";
+import { Container, Input, Text, Table, Kbd, Stack, Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Theme } from "@chakra-ui/react";
 import { InputGroup } from "@/components/ui/input-group";
 import { LuSearch, LuUser } from "react-icons/lu";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Image } from "@chakra-ui/react";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const SearchHighlight = ({
   text,
@@ -39,6 +40,9 @@ const SearchableTable = () => {
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState(items);
 
+    // 미디어 쿼리로 모바일 화면 감지
+    const [isMobile] = useMediaQuery(["(max-width: 768px)"], { ssr: false });
+
   useEffect(() => {
     const filteredResults = items.filter((item) =>
       item.question.toLowerCase().includes(search.toLowerCase()) || // 질문 검색
@@ -47,6 +51,8 @@ const SearchableTable = () => {
     );
     setSearchResults(filteredResults);
   }, [search]);
+
+
 
   return (
     <Theme appearance="light">
@@ -104,6 +110,32 @@ const SearchableTable = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </InputGroup>
+
+        {isMobile ? (
+        // 모바일 레이아웃
+        <Stack mt={4}>
+          {searchResults.map((item, idx) => (
+            <Box
+              key={idx}
+              p={4}
+              borderWidth="1px"
+              borderRadius="8px"
+              bg="#F9FAFB"
+            >
+              <Text fontFamily="pretendard" fontWeight="semibold" mb={1}>
+                <SearchHighlight
+                  text={`${item.grade} - ${item.address}`}
+                  search={search}
+                />
+              </Text>
+              <Text fontFamily="pretendard" fontWeight="regular">
+                <SearchHighlight text={item.question} search={search} />
+              </Text>
+            </Box>
+          ))}
+        </Stack>
+      ) : (
+
         <Container
           border="solid"
           borderWidth={{ base: "0px", md: "1px" }}
@@ -158,6 +190,7 @@ const SearchableTable = () => {
             </Table.Body>
           </Table.Root>
         </Container>
+      )}
       </Container>
     </Theme>
   );
