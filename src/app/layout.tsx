@@ -12,8 +12,10 @@ const pretendard = localFont({
 export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
   return (
+    
     <html suppressHydrationWarning>
-      <body className={`${pretendard.variable} font-pretendard`}>
+      <body style={{ backgroundColor: "#FFFFFF" }}
+      className={`${pretendard.variable} font-pretendard`}>
         <Provider>{children}</Provider>
       </body>
     </html>
