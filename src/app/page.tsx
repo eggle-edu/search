@@ -62,7 +62,7 @@ const SearchableTable = () => {
         pb="100px"
       >
         <Image
-          src="https://github.com/eggle-edu/search/blob/main/public/eggle-logo-light.png?raw=true" // 로고 이미지 경로
+          src="https://github.com/eggle-edu/search/blob/main/public/eggle-logo-light-ver2.png?raw=true" // 로고 이미지 경로
           alt="Logo"
           width={{ base: "140px", md: "200px" }}
           height="auto"
