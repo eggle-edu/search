@@ -10,7 +10,7 @@ const pretendard = localFont({
 })
 
 export const metadata: Metadata = {
-  title: '공부를 함께, 이끌',
+  title: '교육을 함께, 이끌',
   description: '대치동, 목동 등 학군지의 원장님과 자녀 수학 교육 컨설팅이 필요한 학부모를 연결합니다.',
 };
 
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
   return (
-    
+
     <html suppressHydrationWarning>
       <body style={{ backgroundColor: "#FFFFFF" }}
-      className={`${pretendard.variable} font-pretendard`}>
+        className={`${pretendard.variable} font-pretendard`}>
         <Provider>{children}</Provider>
       </body>
     </html>
