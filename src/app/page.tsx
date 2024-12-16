@@ -54,7 +54,6 @@ const SearchableTable = () => {
   }, [search]);
 
 
-
   return (
     <Theme appearance="light">
       <Container
